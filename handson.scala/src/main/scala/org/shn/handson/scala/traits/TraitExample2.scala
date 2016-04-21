@@ -1,32 +1,42 @@
 package org.shn.handson.scala.traits
 
-/**
- * @author ravibabu.mathi
- */
 
-trait Trait_A {
-    def print() { println("Trait_A");  }
+trait Msg {
+  /*
+   * trait is more like interface in java.
+   * trait Instance can't be created.
+   * 
+   * since this trait is not extending any other class or trair, 
+   * super calss for this trair is AnyRef
+   * 
+   * instance if trait is nothing but instance of Concreate class which extended the trait
+   * 
+   * method of Traits can be accessed using trait's instance
+   */
+	def printMsg = println("TraitExample2 - Trait printMsg method")
+	
+	/*
+	 * printMsg2 - is an abstract method
+	 */
+	def printMsg2
+	
 }
- 
-trait Trait_B extends Trait_A {
-    override def print() { println("Trait_B");  }
+
+class Msg1 extends Msg {
+  
+  override def printMsg2 = println("Msg1 - printMsg2 method ")
 }
- 
-trait Trait_C extends Trait_A {
-    override def print() { println("Trait_C"); }
-}
- 
 
 /*
- * print method is overrided in Trait_B and Trait_C as well
- * If D class object calls the print method, 
- * it will call the from Trait_C since Trait_C is the right most trait which is included in inheritance
- */
-class Class_D extends Trait_B with Trait_C {
+class Msg2 with Msg {		// will get compilation error
 }
- 
 
-object TraitExample2 extends App {
-    (new Class_D).print()
+*/
+object TraitExample2 {
+
+  def main(args: Array[String]): Unit = {
+    val msg1 = new Msg1()
+    msg1.printMsg
+  }
 }
 

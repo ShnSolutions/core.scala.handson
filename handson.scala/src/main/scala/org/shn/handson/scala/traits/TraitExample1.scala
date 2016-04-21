@@ -6,9 +6,22 @@ package org.shn.handson.scala.traits
 trait TraitExample1 {
    /*
     * Trait can not have parameterized constructor
-    * 
     */
-  
+  /*
+   * Traits can define fields and maintain state.
+   */
+  /*
+   * In fact you can do any thing in trait definition 
+   * that you can do in class definition, exception two things
+   * 
+   * 1.	Can't create an instance
+   * 2.	can't have parameterized constructor (for primary constructor)
+   */
+  /*
+   * One more difference between class and trait, 
+   * in class, super calls are statically bound, 
+   * in trait they are dynamically bound
+   */
    /*
     * In Traits, can define members (in java terminology instance variables)
     * unlike java, either var  or val can be defined in Trait
